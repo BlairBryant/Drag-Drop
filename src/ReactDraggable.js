@@ -4,16 +4,11 @@ import './App.css';
 
 
 class ReactDraggable extends Component {
-  constructor() {
-    super()
-
-
-  }
   render() {
     return (
       <div className="App">
         <Draggable
-          // axis='y'
+          // axis='x'
           // grid={[50, 50]}
           // bounds={{left: 200, right: 200}}
         >

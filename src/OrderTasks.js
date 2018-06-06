@@ -4,7 +4,8 @@ class OrderTasks extends Component{
     constructor(props){
         super(props);
         this.state = {
-            children: props.children
+            children: props.children,
+            start: null
         }
         this.dragStart = this.dragStart.bind(this);
         this.drop = this.drop.bind(this);

@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Basic from './Basic'
-import DragonDrop from './DragonDrop'
+// import Basic from './Basic'
+// import DragonDrop from './DragonDrop'
 import ReactDraggable from './ReactDraggable'
 import registerServiceWorker from './registerServiceWorker';
 
