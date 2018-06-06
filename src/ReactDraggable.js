@@ -12,19 +12,17 @@ class ReactDraggable extends Component {
   render() {
     return (
       <div className="App">
-        <Draggable 
-            // axis='y'
-            // grid={[50, 50]}
-            // bounds={{left: 200, right: 200}}
+        <Draggable
+          // axis='y'
+          // grid={[50, 50]}
+          // bounds={{left: 200, right: 200}}
         >
-        <div className='yellowDiv'>Yellow</div>
+          <div className='yellowDiv'>Yellow</div>
         </Draggable>
         <div className='greenParent'>
-            <Draggable
-                bounds='parent'
-            >
-                <div className='orangeDiv'></div>
-                </Draggable>
+          <Draggable bounds='parent'>
+            <div className='orangeDiv'></div>
+          </Draggable>
         </div>
       </div>
     );

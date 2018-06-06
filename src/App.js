@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
 import OrderTasks from './OrderTasks';
 
 class App extends Component{
-    
     render(){
         return(
             <div>

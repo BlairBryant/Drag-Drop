@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DragDrop extends Component{
+class OrderTasks extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -18,16 +18,17 @@ class DragDrop extends Component{
     }
 
     dragStart(e, i){
+        console.log('dragStart: ', i)
         this.setState({ start: i });
     }
     
     drop(e, i){
+        console.log('drop i: ', i)
         e.preventDefault()
         let childrenCopy = this.state.children.slice();
         let moving = childrenCopy.splice(this.state.start, 1)
         childrenCopy.splice(i, 0, moving)
         this.setState({ children: childrenCopy });
-        
     }
     
     dragOver(e, i){
@@ -56,4 +57,4 @@ class DragDrop extends Component{
     }
 }
 
-export default DragDrop;
+export default OrderTasks;

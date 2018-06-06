@@ -7,9 +7,9 @@ class App extends Component {
 
     this.state = {
       boxes: [
-        {id: 1, name: 'steve', bgColor: 'yellow'},
-        {id: 2, name: 'john', bgColor: 'green'},
-        {id: 3, name: 'sammi', bgColor: 'teal'}
+        { id: 1, name: 'steve', bgColor: 'yellow' },
+        { id: 2, name: 'john', bgColor: 'green' },
+        { id: 3, name: 'sammi', bgColor: 'teal' }
       ]
     }
   }
@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   drag(e, id) {
+    console.log('box id : ', id)
     e.dataTransfer.setData("id", id)
   }
 
@@ -30,15 +31,23 @@ class App extends Component {
   render() {
     let mappedBoxes = this.state.boxes.map((x, i) => {
       return (
-        <div key={x.name + i} id={x.id} style={{width: '50px', height: '50px', background: x.bgColor}}
-             draggable onDragStart={e => this.drag(e, x.id)}
+        <div key={x.name + i}
+          id={x.id}
+          style={{ width: '50px', height: '50px', background: x.bgColor }}
+          draggable
+          onDragStart={e => this.drag(e, x.id)}
         ></div>
       )
     })
     return (
       <div className="App">
         {mappedBoxes}
-        <section onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)} style={{width: '200px', height: '200px', background: 'mistyrose'}}>Drop here</section>
+        <section onDrop={e => this.drop(e)}
+          onDragOver={e => this.allowDrop(e)}
+          style={{ width: '200px', height: '200px', background: 'mistyrose' }}
+        >
+          Drop here
+        </section>
       </div>
     );
   }

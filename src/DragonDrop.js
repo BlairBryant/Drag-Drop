@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class CompleteTasks extends Component {
+class DragonDrop extends Component {
   constructor() {
     super()
 
@@ -40,26 +40,34 @@ class CompleteTasks extends Component {
 
     this.state.tasks.forEach(t => {
       tasks[t.category].push(
-        <div key={t.name} draggable onDragStart={e => this.onDragStart(e, t.name)}
-             className="draggie" style={{background: t.bgcolor}}
-             >{t.name}</div>
+        <div key={t.name} 
+             className="draggie" 
+             style={{background: t.bgcolor}}
+             draggable 
+             onDragStart={e => this.onDragStart(e, t.name)}
+        >
+        {t.name}
+        </div>
       )
     })
 
     return (
       <div className="App">
-        <section className='todo' onDragOver={(e) => this.onDragOver(e)} onDrop={e => this.onDrop(e, "todo")}>
+        <section className='todo' 
+                 onDragOver={(e) => this.onDragOver(e)} 
+                 onDrop={e => this.onDrop(e, "todo")}>
           <h2>Todo</h2>
           {tasks.todo}
         </section>
-        <section className='completed' onDragOver={(e) => this.onDragOver(e)} onDrop={e => this.onDrop(e, "complete")}>
+        <section className='completed' 
+                 onDragOver={(e) => this.onDragOver(e)} 
+                 onDrop={e => this.onDrop(e, "complete")}>
           <h2>Completed</h2>
           {tasks.complete}
         </section>
-        
       </div>
     );
   }
 }
 
-export default CompleteTasks;
+export default DragonDrop;
