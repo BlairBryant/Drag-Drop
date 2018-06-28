@@ -25,7 +25,6 @@ class OrderTasks extends Component{
     
     drop(e, i){
         console.log('drop i: ', i)
-        e.preventDefault()
         let childrenCopy = this.state.children.slice();
         let moving = childrenCopy.splice(this.state.start, 1)
         childrenCopy.splice(i, 0, moving)

@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   drop(e) {
-    e.preventDefault()
     let data = e.dataTransfer.getData('id')
     e.target.appendChild(document.getElementById(data))
   }
